@@ -1,0 +1,15 @@
+# Web framework
+fastapi==0.110.0
+uvicorn[standard]>=0.46
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+# Data validation & Word document generation
+pydantic>=2.6.4
+python-docx==1.1.0
+
+# Google Antigravity Agent SDK + new google-genai (pulled transitively)
+# google-genai is also used directly by rag_engine.py for embeddings.
+google-antigravity==0.1.0
+# Antigravity pb2 files use protobuf Edition 2024 (added in protobuf 32 / Python wheel 7.x)
+protobuf>=7.0

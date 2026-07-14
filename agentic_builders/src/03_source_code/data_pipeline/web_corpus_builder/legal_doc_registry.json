@@ -1,0 +1,520 @@
+{
+  "description": "Canonical legal document registry for R2AI SME legal assistant corpus. Use canonical_title for relevant_docs and BM25 metadata whenever doc_code matches.",
+  "docs": [
+    {
+      "doc_code": "04/2017/QH14",
+      "canonical_title": "Luật Hỗ trợ doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Luật Hỗ trợ doanh nghiệp nhỏ và vừa 2017"
+      ]
+    },
+    {
+      "doc_code": "80/2021/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết và hướng dẫn thi hành một số điều của Luật Hỗ trợ doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 80/2021/NĐ-CP",
+        "Nghị định hướng dẫn Luật Hỗ trợ doanh nghiệp nhỏ và vừa"
+      ]
+    },
+    {
+      "doc_code": "39/2018/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số điều của Luật Hỗ trợ doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 39/2018/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "06/2022/TT-BKHĐT",
+      "canonical_title": "Thông tư Hướng dẫn một số điều của Nghị định số 80/2021/NĐ-CP",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 06/2022/TT-BKHĐT"
+      ]
+    },
+    {
+      "doc_code": "38/2019/QH14",
+      "canonical_title": "Luật Quản lý thuế",
+      "domain": "tax_invoice",
+      "priority": 1,
+      "aliases": [
+        "Luật Quản lý thuế 2019"
+      ]
+    },
+    {
+      "doc_code": "126/2020/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số điều của Luật Quản lý thuế",
+      "domain": "tax_invoice",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 126/2020/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "80/2021/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị định số 126/2020/NĐ-CP",
+      "domain": "tax_invoice",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 80/2021/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "123/2020/NĐ-CP",
+      "canonical_title": "Nghị định Quy định về hóa đơn, chứng từ",
+      "domain": "tax_invoice",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 123/2020/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "78/2021/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn thực hiện một số điều của Luật Quản lý thuế và Nghị định số 123/2020/NĐ-CP quy định về hóa đơn, chứng từ",
+      "domain": "tax_invoice",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 78/2021/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "45/2019/QH14",
+      "canonical_title": "Bộ luật Lao động",
+      "domain": "labor_insurance",
+      "priority": 1,
+      "aliases": [
+        "Bộ luật Lao động 2019"
+      ]
+    },
+    {
+      "doc_code": "145/2020/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động",
+      "domain": "labor_insurance",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 145/2020/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "12/2022/NĐ-CP",
+      "canonical_title": "Nghị định Quy định xử phạt vi phạm hành chính trong lĩnh vực lao động, bảo hiểm xã hội, người lao động Việt Nam đi làm việc ở nước ngoài theo hợp đồng",
+      "domain": "labor_insurance",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 12/2022/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "58/2014/QH13",
+      "canonical_title": "Luật Bảo hiểm xã hội",
+      "domain": "labor_insurance",
+      "priority": 1,
+      "aliases": [
+        "Luật Bảo hiểm xã hội 2014"
+      ]
+    },
+    {
+      "doc_code": "115/2015/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số điều của Luật Bảo hiểm xã hội về bảo hiểm xã hội bắt buộc",
+      "domain": "labor_insurance",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 115/2015/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "50/2005/QH11",
+      "canonical_title": "Luật Sở hữu trí tuệ",
+      "domain": "ip",
+      "priority": 1,
+      "aliases": [
+        "Luật Sở hữu trí tuệ 2005"
+      ]
+    },
+    {
+      "doc_code": "65/2023/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số điều và biện pháp thi hành Luật Sở hữu trí tuệ về sở hữu công nghiệp, bảo vệ quyền sở hữu công nghiệp, quyền đối với giống cây trồng và quản lý nhà nước về sở hữu trí tuệ",
+      "domain": "ip",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 65/2023/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "23/2023/TT-BKHCN",
+      "canonical_title": "Thông tư Quy định chi tiết một số điều của Luật Sở hữu trí tuệ và biện pháp thi hành Nghị định số 65/2023/NĐ-CP về sở hữu công nghiệp",
+      "domain": "ip",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 23/2023/TT-BKHCN"
+      ]
+    },
+    {
+      "doc_code": "01/2007/TT-BKHCN",
+      "canonical_title": "Thông tư Hướng dẫn thi hành Nghị định số 103/2006/NĐ-CP quy định chi tiết và hướng dẫn thi hành một số điều của Luật Sở hữu trí tuệ về sở hữu công nghiệp",
+      "domain": "ip",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 01/2007/TT-BKHCN"
+      ]
+    },
+    {
+      "doc_code": "95/2020/NĐ-CP",
+      "canonical_title": "Nghị định Hướng dẫn về đấu thầu mua sắm theo Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương",
+      "domain": "procurement",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 95/2020/NĐ-CP",
+        "CPTPP procurement decree"
+      ]
+    },
+    {
+      "doc_code": "09/2022/NĐ-CP",
+      "canonical_title": "Nghị định Sửa đổi, bổ sung một số điều của Nghị định số 95/2020/NĐ-CP hướng dẫn về đấu thầu mua sắm theo Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương",
+      "domain": "procurement",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 09/2022/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "59/2020/QH14",
+      "canonical_title": "Luật Doanh nghiệp",
+      "domain": "enterprise",
+      "priority": 1,
+      "aliases": [
+        "Luật Doanh nghiệp 2020"
+      ]
+    },
+    {
+      "doc_code": "01/2021/NĐ-CP",
+      "canonical_title": "Nghị định Về đăng ký doanh nghiệp",
+      "domain": "enterprise",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 01/2021/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "36/2005/QH11",
+      "canonical_title": "Luật Thương mại",
+      "domain": "enterprise",
+      "priority": 2,
+      "aliases": [
+        "Luật Thương mại 2005"
+      ]
+    },
+    {
+      "doc_code": "91/2015/QH13",
+      "canonical_title": "Bộ luật Dân sự",
+      "domain": "enterprise",
+      "priority": 2,
+      "aliases": [
+        "Bộ luật Dân sự 2015"
+      ]
+    },
+    {
+      "doc_code": "133/2016/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn chế độ kế toán doanh nghiệp nhỏ và vừa",
+      "domain": "tax_invoice",
+      "priority": 2,
+      "aliases": [
+        "Thông tư 133/2016/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "84/2015/QH13",
+      "canonical_title": "Luật An toàn, vệ sinh lao động",
+      "domain": "labor_insurance",
+      "priority": 2,
+      "aliases": [
+        "Luật An toàn, vệ sinh lao động 2015"
+      ]
+    },
+    {
+      "doc_code": "41/2024/QH15",
+      "canonical_title": "Luật Bảo hiểm xã hội",
+      "domain": "labor_insurance",
+      "priority": 2,
+      "aliases": [
+        "Luật Bảo hiểm xã hội 2024"
+      ]
+    },
+    {
+      "doc_code": "88/2015/QH13",
+      "canonical_title": "Luật Kế toán",
+      "domain": "tax_invoice",
+      "priority": 2,
+      "aliases": [
+        "Luật Kế toán 2015"
+      ]
+    },
+    {
+      "doc_code": "125/2020/NĐ-CP",
+      "canonical_title": "Nghị định Quy định xử phạt vi phạm hành chính về thuế, hóa đơn",
+      "domain": "tax_invoice",
+      "priority": 2,
+      "aliases": [
+        "Nghị định 125/2020/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "39/2019/NĐ-CP",
+      "canonical_title": "Nghị định Về tổ chức và hoạt động của Quỹ Phát triển doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 2,
+      "aliases": [
+        "Nghị định 39/2019/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "88/2021/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn chế độ kế toán cho các hộ kinh doanh, cá nhân kinh doanh",
+      "domain": "tax_invoice",
+      "priority": 2,
+      "aliases": [
+        "Thông tư 88/2021/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "19/2023/QH15",
+      "canonical_title": "Luật Bảo vệ quyền lợi người tiêu dùng",
+      "domain": "enterprise",
+      "priority": 3,
+      "aliases": [
+        "Luật Bảo vệ quyền lợi người tiêu dùng 2023"
+      ]
+    },
+    {
+      "doc_code": "54/2010/QH12",
+      "canonical_title": "Luật Trọng tài thương mại",
+      "domain": "enterprise",
+      "priority": 3,
+      "aliases": [
+        "Luật Trọng tài thương mại 2010"
+      ]
+    },
+    {
+      "doc_code": "122/2021/NĐ-CP",
+      "canonical_title": "Nghị định Quy định xử phạt vi phạm hành chính trong lĩnh vực kế hoạch và đầu tư",
+      "domain": "enterprise",
+      "priority": 3,
+      "aliases": [
+        "Nghị định 122/2021/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "49/2019/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn quản lý và sử dụng kinh phí ngân sách nhà nước hỗ trợ phát triển nguồn nhân lực cho doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 49/2019/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "54/2019/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn quản lý, sử dụng kinh phí ngân sách nhà nước hỗ trợ doanh nghiệp nhỏ và vừa sử dụng dịch vụ tư vấn thuộc mạng lưới tư vấn viên",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 54/2019/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "52/2023/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn cơ chế sử dụng kinh phí chi thường xuyên từ ngân sách nhà nước để hỗ trợ doanh nghiệp nhỏ và vừa theo Nghị định số 80/2021/NĐ-CP",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 52/2023/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "64/2021/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước phục vụ hoạt động hỗ trợ pháp lý cho doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 64/2021/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "105/2020/TT-BTC",
+      "canonical_title": "Thông tư Hướng dẫn về đăng ký thuế",
+      "domain": "tax_invoice",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 105/2020/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "10/2012/QH13",
+      "canonical_title": "Luật Công đoàn",
+      "domain": "labor_insurance",
+      "priority": 1,
+      "aliases": [
+        "Luật Công đoàn 2012"
+      ]
+    },
+    {
+      "doc_code": "07/2022/QH15",
+      "canonical_title": "Luật Sửa đổi, bổ sung một số điều của Luật Sở hữu trí tuệ",
+      "domain": "ip",
+      "priority": 1,
+      "aliases": [
+        "Luật Sở hữu trí tuệ sửa đổi 2022"
+      ]
+    },
+    {
+      "doc_code": "43/2013/QH13",
+      "canonical_title": "Luật Đấu thầu",
+      "domain": "procurement",
+      "priority": 1,
+      "aliases": [
+        "Luật Đấu thầu 2013"
+      ]
+    },
+    {
+      "doc_code": "22/2023/QH15",
+      "canonical_title": "Luật Đấu thầu",
+      "domain": "procurement",
+      "priority": 1,
+      "aliases": [
+        "Luật Đấu thầu 2023"
+      ]
+    },
+    {
+      "doc_code": "45/2013/QH13",
+      "canonical_title": "Luật Đất đai",
+      "domain": "land_construction",
+      "priority": 1,
+      "aliases": [
+        "Luật Đất đai 2013"
+      ]
+    },
+    {
+      "doc_code": "50/2014/QH13",
+      "canonical_title": "Luật Xây dựng",
+      "domain": "land_construction",
+      "priority": 1,
+      "aliases": [
+        "Luật Xây dựng 2014"
+      ]
+    },
+    {
+      "doc_code": "62/2020/QH14",
+      "canonical_title": "Luật Sửa đổi, bổ sung một số điều của Luật Xây dựng",
+      "domain": "land_construction",
+      "priority": 1,
+      "aliases": [
+        "Luật Xây dựng sửa đổi 2020"
+      ]
+    },
+    {
+      "doc_code": "107/2016/QH13",
+      "canonical_title": "Luật Thuế xuất khẩu, thuế nhập khẩu",
+      "domain": "customs_trade",
+      "priority": 1,
+      "aliases": [
+        "Luật Thuế xuất khẩu, thuế nhập khẩu 2016"
+      ]
+    },
+    {
+      "doc_code": "54/2014/QH13",
+      "canonical_title": "Luật Hải quan",
+      "domain": "customs_trade",
+      "priority": 1,
+      "aliases": [
+        "Luật Hải quan 2014"
+      ]
+    },
+    {
+      "doc_code": "38/2015/TT-BTC",
+      "canonical_title": "Thông tư Quy định về thủ tục hải quan; kiểm tra, giám sát hải quan; thuế xuất khẩu, thuế nhập khẩu và quản lý thuế đối với hàng hóa xuất khẩu, nhập khẩu",
+      "domain": "customs_trade",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 38/2015/TT-BTC"
+      ]
+    },
+    {
+      "doc_code": "05/2017/QH14",
+      "canonical_title": "Luật Quản lý ngoại thương",
+      "domain": "customs_trade",
+      "priority": 1,
+      "aliases": [
+        "Luật Quản lý ngoại thương 2017"
+      ]
+    },
+    {
+      "doc_code": "05/2019/TT-BKHĐT",
+      "canonical_title": "Thông tư Hướng dẫn hỗ trợ phát triển nguồn nhân lực cho doanh nghiệp nhỏ và vừa",
+      "domain": "sme",
+      "priority": 1,
+      "aliases": [
+        "Thông tư 05/2019/TT-BKHĐT"
+      ]
+    },
+    {
+      "doc_code": "15/2021/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số nội dung về quản lý dự án đầu tư xây dựng",
+      "domain": "land_construction",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 15/2021/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "16/2022/NĐ-CP",
+      "canonical_title": "Nghị định Quy định xử phạt vi phạm hành chính về xây dựng",
+      "domain": "land_construction",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 16/2022/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "134/2016/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số điều và biện pháp thi hành Luật Thuế xuất khẩu, thuế nhập khẩu",
+      "domain": "customs_trade",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 134/2016/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "08/2015/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết và biện pháp thi hành Luật Hải quan về thủ tục hải quan, kiểm tra, giám sát, kiểm soát hải quan",
+      "domain": "customs_trade",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 08/2015/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "136/2020/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết một số điều và biện pháp thi hành Luật Phòng cháy và chữa cháy và Luật sửa đổi, bổ sung một số điều của Luật Phòng cháy và chữa cháy",
+      "domain": "compliance",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 136/2020/NĐ-CP"
+      ]
+    },
+    {
+      "doc_code": "15/2018/NĐ-CP",
+      "canonical_title": "Nghị định Quy định chi tiết thi hành một số điều của Luật An toàn thực phẩm",
+      "domain": "compliance",
+      "priority": 1,
+      "aliases": [
+        "Nghị định 15/2018/NĐ-CP"
+      ]
+    }
+  ]
+}

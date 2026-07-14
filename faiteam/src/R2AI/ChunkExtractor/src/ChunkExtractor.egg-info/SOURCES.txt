@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/ChunkExtractor/__init__.py
+src/ChunkExtractor/chunk_extractor.py
+src/ChunkExtractor.egg-info/PKG-INFO
+src/ChunkExtractor.egg-info/SOURCES.txt
+src/ChunkExtractor.egg-info/dependency_links.txt
+src/ChunkExtractor.egg-info/requires.txt
+src/ChunkExtractor.egg-info/top_level.txt
+src/ChunkExtractor/TreeExtractor/__init__.py
+src/ChunkExtractor/TreeExtractor/tree_chunks_extractor.py

@@ -1,0 +1,1 @@
+"""Helper cho competition jobs."""

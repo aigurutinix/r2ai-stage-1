@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: ChunkExtractor
+Version: 0.0.1
+Summary: version 0.0.1 of ChunkExtractor
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: tiktoken
+Requires-Dist: semantic-text-splitter

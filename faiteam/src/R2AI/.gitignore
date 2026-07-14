@@ -1,0 +1,18 @@
+# Output & intermediate data (regeneratable)
+output/
+test/
+qdrant_storage/
+*.pkl
+*.npz
+*.pt
+*.pth
+models/
+data/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+.env.cloud

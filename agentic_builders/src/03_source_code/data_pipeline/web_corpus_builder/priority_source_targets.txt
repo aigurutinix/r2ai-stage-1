@@ -1,0 +1,63 @@
+# Full-text legal source targets
+#
+# Rule:
+# - Add full legal text only: law/decree/circular text split by "Điều".
+# - Do not add news summaries, explanation posts, or pages that only quote a few bullets.
+# - If a web page title contains "mới nhất" / "áp dụng 2025", it is still usable only when
+#   the page contains full article-level legal text. Canonical title is handled by
+#   legal_doc_registry.json and canonicalize_legal_corpus.py.
+# - After adding sources: build web corpus -> dedup -> merge -> canonicalize -> build BM25 -> build dense.
+
+## SME
+04/2017/QH14 | Luật Hỗ trợ doanh nghiệp nhỏ và vừa
+80/2021/NĐ-CP | Nghị định hướng dẫn Luật Hỗ trợ doanh nghiệp nhỏ và vừa
+39/2018/NĐ-CP | Nghị định quy định chi tiết một số điều của Luật Hỗ trợ doanh nghiệp nhỏ và vừa
+06/2022/TT-BKHĐT | Thông tư hướng dẫn một số điều của Nghị định 80/2021/NĐ-CP
+39/2019/NĐ-CP | Quỹ Phát triển doanh nghiệp nhỏ và vừa
+05/2019/TT-BKHĐT | Hỗ trợ phát triển nguồn nhân lực cho DNNVV
+
+## Thuế / hóa đơn / kế toán
+38/2019/QH14 | Luật Quản lý thuế
+126/2020/NĐ-CP | Nghị định hướng dẫn Luật Quản lý thuế
+80/2021/TT-BTC | Thông tư hướng dẫn Luật Quản lý thuế
+123/2020/NĐ-CP | Hóa đơn, chứng từ
+78/2021/TT-BTC | Hóa đơn điện tử
+125/2020/NĐ-CP | Xử phạt vi phạm hành chính về thuế, hóa đơn
+88/2015/QH13 | Luật Kế toán
+133/2016/TT-BTC | Chế độ kế toán doanh nghiệp nhỏ và vừa
+88/2021/TT-BTC | Kế toán hộ kinh doanh, cá nhân kinh doanh
+
+## Lao động / BHXH
+45/2019/QH14 | Bộ luật Lao động
+145/2020/NĐ-CP | Hướng dẫn Bộ luật Lao động
+12/2022/NĐ-CP | Xử phạt vi phạm hành chính lĩnh vực lao động, BHXH
+58/2014/QH13 | Luật Bảo hiểm xã hội 2014
+41/2024/QH15 | Luật Bảo hiểm xã hội 2024
+115/2015/NĐ-CP | BHXH bắt buộc
+84/2015/QH13 | Luật An toàn, vệ sinh lao động
+
+## Sở hữu trí tuệ
+50/2005/QH11 | Luật Sở hữu trí tuệ
+65/2023/NĐ-CP | Hướng dẫn Luật Sở hữu trí tuệ về sở hữu công nghiệp
+23/2023/TT-BKHCN | Hướng dẫn sở hữu công nghiệp
+01/2007/TT-BKHCN | Hướng dẫn Nghị định 103/2006/NĐ-CP về sở hữu công nghiệp
+99/2013/NĐ-CP | Xử phạt vi phạm hành chính lĩnh vực sở hữu công nghiệp
+
+## Đấu thầu / CPTPP / EVFTA / UKVFTA
+95/2020/NĐ-CP | Đấu thầu mua sắm theo CPTPP
+09/2022/NĐ-CP | Sửa đổi Nghị định 95/2020/NĐ-CP
+Docs EVFTA/UKVFTA procurement | Add if test audit shows questions in this group
+
+## Doanh nghiệp / thương mại / dân sự
+59/2020/QH14 | Luật Doanh nghiệp
+01/2021/NĐ-CP | Đăng ký doanh nghiệp
+122/2021/NĐ-CP | Xử phạt vi phạm lĩnh vực kế hoạch và đầu tư
+36/2005/QH11 | Luật Thương mại
+91/2015/QH13 | Bộ luật Dân sự
+19/2023/QH15 | Bảo vệ quyền lợi người tiêu dùng
+54/2010/QH12 | Trọng tài thương mại
+
+## Current audit gaps
+MISSING_OR_UNPARSED | 01/2007/TT-BKHCN
+WEAK_3_ROWS | 09/2022/NĐ-CP
+WEAK_7_ROWS | 88/2021/TT-BTC

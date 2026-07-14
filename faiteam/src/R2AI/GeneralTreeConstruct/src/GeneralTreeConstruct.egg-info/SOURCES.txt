@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/GeneralTreeConstruct/token_counter.py
+src/GeneralTreeConstruct/tree_construct.py
+src/GeneralTreeConstruct.egg-info/PKG-INFO
+src/GeneralTreeConstruct.egg-info/SOURCES.txt
+src/GeneralTreeConstruct.egg-info/dependency_links.txt
+src/GeneralTreeConstruct.egg-info/requires.txt
+src/GeneralTreeConstruct.egg-info/top_level.txt
+src/GeneralTreeConstruct/config/models.py

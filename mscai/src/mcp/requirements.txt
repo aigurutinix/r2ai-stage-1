@@ -1,0 +1,9 @@
+mcp>=1.2.0
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+PyYAML>=6.0.1
+asyncpg>=0.29.0
+chromadb>=0.5.0
+langchain-openai>=0.1.8
+fastmcp>=2.0.0
+uvicorn[standard]>=0.30.0

@@ -1,0 +1,60 @@
+name: legal-assistant-agent
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    network_mode: host
+    command: ["postgres", "-p", "${POSTGRES_PORT:-23432}"]
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-legal_assistant}
+      PGPORT: ${POSTGRES_PORT:-23432}
+    volumes:
+      - legal_postgres_data:/var/lib/postgresql/data
+      - ./backend/docker/postgres/init.sql:/docker-entrypoint-initdb.d/001-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -p ${POSTGRES_PORT:-23432} -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-legal_assistant}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./backend/config.yaml:/app/config.yaml:ro
+      - legal_chroma_data:/app/chroma_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; from src.config import get_settings; s=get_settings(); urllib.request.urlopen(f'http://127.0.0.1:{s.app.port}/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  ui:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      PORT: ${UI_PORT:-5173}
+      HOSTNAME: 0.0.0.0
+      BACKEND_CONFIG_PATH: /app/backend/config.yaml
+    volumes:
+      - ./backend/config.yaml:/app/backend/config.yaml:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  legal_postgres_data:
+  legal_chroma_data:

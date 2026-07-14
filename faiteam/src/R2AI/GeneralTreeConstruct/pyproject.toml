@@ -1,0 +1,21 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "GeneralTreeConstruct"
+version = "0.1.1"
+description = "version 0.1.1 of GeneralTreeConstruct"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "openai",
+    "requests",
+    "tiktoken",
+    "dotenv",
+    "html-to-markdown[lxml]"
+]
+requires-python = ">=3.8"

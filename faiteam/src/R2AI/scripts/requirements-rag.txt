@@ -1,0 +1,11 @@
+qdrant-client
+sentence-transformers
+transformers
+torch
+rank-bm25
+sentencepiece
+bitsandbytes
+accelerate
+python-dotenv
+pandas
+pyarrow

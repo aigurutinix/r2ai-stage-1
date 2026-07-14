@@ -1,0 +1,455 @@
+[
+  {
+    "id": "0",
+    "content": "| CHÍNH PHỦ   ------- | CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM   Độc lập - Tự do - Hạnh phúc    --------------- |\n| --- | --- |\n| Số: 41/2022/NĐ-CP | Hà Nội, ngày 20 tháng 6 năm 2022 |",
+    "content_raw": "| CHÍNH PHỦ   ------- | CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM   Độc lập - Tự do - Hạnh phúc    --------------- |\n| --- | --- |\n| Số: 41/2022/NĐ-CP | Hà Nội, ngày 20 tháng 6 năm 2022 |",
+    "type": "table",
+    "number": "",
+    "level": 7,
+    "children": [],
+    "is_edit": false,
+    "document_code": "41/2022/NĐ-CP",
+    "num_tokens": 99
+  },
+  {
+    "id": "1",
+    "content": "NGHỊ ĐỊNH",
+    "content_raw": "NGHỊ ĐỊNH",
+    "type": "title",
+    "number": "",
+    "level": -1,
+    "children": [
+      {
+        "id": "2",
+        "content": "SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 123/2020/NĐ-CP NGÀY 19 THÁNG 10 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ HÓA ĐƠN, CHỨNG TỪ VÀ NGHỊ ĐỊNH SỐ 15/2022/NĐ-CP NGÀY 28 THÁNG 01 NĂM 2022 CỦA CHÍNH PHỦ QUY ĐỊNH CHÍNH SÁCH MIỄN, GIẢM THUẾ THEO NGHỊ QUYẾT SỐ 43/2022/QH15 CỦA QUỐC HỘI VỀ CHÍNH SÁCH TÀI KHÓA, TIỀN TỆ HỖ TRỢ CHƯƠNG TRÌNH PHỤC HỒI VÀ PHÁT TRIỂN KINH TẾ - XÃ HỘI",
+        "content_raw": "SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 123/2020/NĐ-CP NGÀY 19 THÁNG 10 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ HÓA ĐƠN, CHỨNG TỪ VÀ NGHỊ ĐỊNH SỐ 15/2022/NĐ-CP NGÀY 28 THÁNG 01 NĂM 2022 CỦA CHÍNH PHỦ QUY ĐỊNH CHÍNH SÁCH MIỄN, GIẢM THUẾ THEO NGHỊ QUYẾT SỐ 43/2022/QH15 CỦA QUỐC HỘI VỀ CHÍNH SÁCH TÀI KHÓA, TIỀN TỆ HỖ TRỢ CHƯƠNG TRÌNH PHỤC HỒI VÀ PHÁT TRIỂN KINH TẾ - XÃ HỘI",
+        "type": "title",
+        "number": "",
+        "level": 0,
+        "children": [
+          {
+            "id": "3",
+            "content": "Căn cứ Luật Tổ chức Chính phủ ngày 19 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+            "content_raw": "Căn cứ Luật Tổ chức Chính phủ ngày 19 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 92
+          },
+          {
+            "id": "4",
+            "content": "Căn cứ Luật Quản lý thuế ngày 13 tháng 6 năm 2019;",
+            "content_raw": "Căn cứ Luật Quản lý thuế ngày 13 tháng 6 năm 2019;",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 28
+          },
+          {
+            "id": "5",
+            "content": "Căn cứ Nghị quyết số 43/2022/QH15 ngày 11 tháng 01 năm 2022 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội;",
+            "content_raw": "Căn cứ Nghị quyết số 43/2022/QH15 ngày 11 tháng 01 năm 2022 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội;",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 85
+          },
+          {
+            "id": "6",
+            "content": "Theo đề nghị của Bộ trưởng Bộ Tài chính;",
+            "content_raw": "Theo đề nghị của Bộ trưởng Bộ Tài chính;",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 22
+          },
+          {
+            "id": "7",
+            "content": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ và Nghị định số 15/2022/NĐ-CP ngày 28 tháng 01 năm 2022 của Chính phủ quy định chính sách miễn, giảm thuế theo Nghị quyết số 43/2022/QH15 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội.",
+            "content_raw": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ và Nghị định số 15/2022/NĐ-CP ngày 28 tháng 01 năm 2022 của Chính phủ quy định chính sách miễn, giảm thuế theo Nghị quyết số 43/2022/QH15 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội.",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 205
+          },
+          {
+            "id": "8",
+            "content": "Điều 1. Sửa đổi, bổ sung Mẫu số 01/TB-SSĐT Phụ lục IB ban hành kèm theo Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ",
+            "content_raw": "Điều 1. Sửa đổi, bổ sung Mẫu số 01/TB-SSĐT Phụ lục IB ban hành kèm theo Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ",
+            "type": "điều",
+            "number": "1",
+            "level": 3,
+            "children": [
+              {
+                "id": "9",
+                "content": "Ban hành kèm theo Nghị định này Thông báo về việc tiếp nhận và kết quả xử lý về việc hóa đơn điện tử đã lập có sai sót theo Mẫu số 01/TB-HĐSS thay thế Mẫu số 01/TB-SSĐT Phụ lục IB ban hành kèm theo Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ.",
+                "content_raw": "Ban hành kèm theo Nghị định này Thông báo về việc tiếp nhận và kết quả xử lý về việc hóa đơn điện tử đã lập có sai sót theo Mẫu số 01/TB-HĐSS thay thế Mẫu số 01/TB-SSĐT Phụ lục IB ban hành kèm theo Nghị định số 123/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định về hóa đơn, chứng từ.",
+                "type": "nội dung",
+                "number": "",
+                "level": 7,
+                "children": [],
+                "is_edit": false,
+                "document_code": "41/2022/NĐ-CP",
+                "num_tokens": 155
+              }
+            ],
+            "is_edit": true,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 248
+          },
+          {
+            "id": "10",
+            "content": "Điều 2. Sửa đổi, bổ sung khoản 4 Điều 1 của Nghị định số 15/2022/NĐ-CP ngày 28 tháng 01 năm 2022 của Chính phủ quy định chính sách miễn, giảm thuế theo Nghị quyết số 43/2022/QH15 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội",
+            "content_raw": "Điều 2. Sửa đổi, bổ sung khoản 4 Điều 1 của Nghị định số 15/2022/NĐ-CP ngày 28 tháng 01 năm 2022 của Chính phủ quy định chính sách miễn, giảm thuế theo Nghị quyết số 43/2022/QH15 của Quốc hội về chính sách tài khóa, tiền tệ hỗ trợ Chương trình phục hồi và phát triển kinh tế - xã hội",
+            "type": "điều",
+            "number": "2",
+            "level": 3,
+            "children": [
+              {
+                "id": "11",
+                "content": "“4. Trường hợp cơ sở kinh doanh theo quy định tại điểm a khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ áp dụng các mức thuế suất khác nhau thì trên hóa đơn giá trị gia tăng phải ghi rõ thuế suất của từng hàng hóa, dịch vụ theo quy định tại khoản 3 Điều này.",
+                "content_raw": "“4. Trường hợp cơ sở kinh doanh theo quy định tại điểm a khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ áp dụng các mức thuế suất khác nhau thì trên hóa đơn giá trị gia tăng phải ghi rõ thuế suất của từng hàng hóa, dịch vụ theo quy định tại khoản 3 Điều này.",
+                "type": "nội dung",
+                "number": "",
+                "level": 7,
+                "children": [],
+                "is_edit": true,
+                "document_code": "41/2022/NĐ-CP",
+                "num_tokens": 126
+              },
+              {
+                "id": "12",
+                "content": "Trường hợp cơ sở kinh doanh theo quy định tại điểm b khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ thì trên hóa đơn bán hàng phải ghi rõ số tiền được giảm theo quy định tại khoản 3 Điều này.”",
+                "content_raw": "Trường hợp cơ sở kinh doanh theo quy định tại điểm b khoản 2 Điều này khi bán hàng hóa, cung cấp dịch vụ thì trên hóa đơn bán hàng phải ghi rõ số tiền được giảm theo quy định tại khoản 3 Điều này.”",
+                "type": "nội dung",
+                "number": "",
+                "level": 7,
+                "children": [],
+                "is_edit": false,
+                "document_code": "41/2022/NĐ-CP",
+                "num_tokens": 94
+              }
+            ],
+            "is_edit": true,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 368
+          },
+          {
+            "id": "13",
+            "content": "Điều 3. Tổ chức thực hiện và hiệu lực thi hành",
+            "content_raw": "Điều 3. Tổ chức thực hiện và hiệu lực thi hành",
+            "type": "điều",
+            "number": "3",
+            "level": 3,
+            "children": [
+              {
+                "id": "14",
+                "content": "1. Nghị định này có hiệu lực từ ngày ký ban hành.",
+                "content_raw": "1. Nghị định này có hiệu lực từ ngày ký ban hành.",
+                "type": "khoản",
+                "number": "1",
+                "level": 4,
+                "children": [
+                  {
+                    "id": "15",
+                    "content": "Trường hợp từ ngày 01 tháng 02 năm 2022 đến ngày Nghị định này có hiệu lực thi hành, cơ sở kinh doanh đã thực hiện theo quy định tại Điều 2 Nghị định này thì vẫn được giảm thuế giá trị gia tăng và không phải điều chỉnh lại hóa đơn, không bị xử phạt vi phạm hành chính về thuế và hóa đơn.",
+                    "content_raw": "Trường hợp từ ngày 01 tháng 02 năm 2022 đến ngày Nghị định này có hiệu lực thi hành, cơ sở kinh doanh đã thực hiện theo quy định tại Điều 2 Nghị định này thì vẫn được giảm thuế giá trị gia tăng và không phải điều chỉnh lại hóa đơn, không bị xử phạt vi phạm hành chính về thuế và hóa đơn.",
+                    "type": "nội dung",
+                    "number": "",
+                    "level": 7,
+                    "children": [],
+                    "is_edit": false,
+                    "document_code": "41/2022/NĐ-CP",
+                    "num_tokens": 136
+                  }
+                ],
+                "is_edit": false,
+                "document_code": "41/2022/NĐ-CP",
+                "num_tokens": 159
+              },
+              {
+                "id": "16",
+                "content": "2. Bộ Tài chính chịu trách nhiệm chỉ đạo, tổ chức triển khai Nghị định này.",
+                "content_raw": "2. Bộ Tài chính chịu trách nhiệm chỉ đạo, tổ chức triển khai Nghị định này.",
+                "type": "khoản",
+                "number": "2",
+                "level": 4,
+                "children": [],
+                "is_edit": false,
+                "document_code": "41/2022/NĐ-CP",
+                "num_tokens": 38
+              },
+              {
+                "id": "17",
+                "content": "3. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và các doanh nghiệp, tổ chức, hộ kinh doanh, cá nhân có liên quan chịu trách nhiệm thi hành Nghị định này.",
+                "content_raw": "3. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và các doanh nghiệp, tổ chức, hộ kinh doanh, cá nhân có liên quan chịu trách nhiệm thi hành Nghị định này.",
+                "type": "khoản",
+                "number": "3",
+                "level": 4,
+                "children": [
+                  {
+                    "id": "18",
+                    "content": "| Nơi nhận:   - Ban Bí thư Trung ương Đảng;   - Thủ tướng, các Phó Thủ tướng Chính phủ;   - Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;   - HĐND, UBND các tỉnh, thành phố trực thuộc trung ương;   - Văn phòng Trung ương và các Ban của Đảng;   - Văn phòng Tổng Bí thư;   - Văn phòng Chủ tịch nước;   - Hội đồng Dân tộc và các Ủy ban của Quốc hội;   - Văn phòng Quốc hội;   - Tòa án nhân dân tối cao;   - Viện kiểm sát nhân dân tối cao;   - Kiểm toán nhà nước;   - Ủy ban Giám sát tài chính Quốc gia;   - Ngân hàng Chính sách xã hội;   - Ngân hàng Phát triển Việt Nam;   - Ủy ban trung ương Mặt trận Tổ quốc Việt Nam;   - Cơ quan trung ương của các đoàn thể;   - VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT,   các Vụ, Cục, đơn vị trực thuộc, Công báo;   - Lưu: VT, KTTH (2b). | TM. CHÍNH PHỦ   KT. THỦ TƯỚNG   PHÓ THỦ TƯỚNG       Lê Minh Khái |\n| --- | --- |",
+                    "content_raw": "| Nơi nhận:   - Ban Bí thư Trung ương Đảng;   - Thủ tướng, các Phó Thủ tướng Chính phủ;   - Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;   - HĐND, UBND các tỉnh, thành phố trực thuộc trung ương;   - Văn phòng Trung ương và các Ban của Đảng;   - Văn phòng Tổng Bí thư;   - Văn phòng Chủ tịch nước;   - Hội đồng Dân tộc và các Ủy ban của Quốc hội;   - Văn phòng Quốc hội;   - Tòa án nhân dân tối cao;   - Viện kiểm sát nhân dân tối cao;   - Kiểm toán nhà nước;   - Ủy ban Giám sát tài chính Quốc gia;   - Ngân hàng Chính sách xã hội;   - Ngân hàng Phát triển Việt Nam;   - Ủy ban trung ương Mặt trận Tổ quốc Việt Nam;   - Cơ quan trung ương của các đoàn thể;   - VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT,   các Vụ, Cục, đơn vị trực thuộc, Công báo;   - Lưu: VT, KTTH (2b). | TM. CHÍNH PHỦ   KT. THỦ TƯỚNG   PHÓ THỦ TƯỚNG       Lê Minh Khái |\n| --- | --- |",
+                    "type": "table",
+                    "number": "",
+                    "level": 7,
+                    "children": [],
+                    "is_edit": false,
+                    "document_code": "41/2022/NĐ-CP",
+                    "num_tokens": 442
+                  }
+                ],
+                "is_edit": false,
+                "document_code": "41/2022/NĐ-CP",
+                "num_tokens": 566
+              }
+            ],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 786
+          }
+        ],
+        "is_edit": false,
+        "document_code": "41/2022/NĐ-CP",
+        "num_tokens": 2112
+      },
+      {
+        "id": "19",
+        "content": "PHỤ LỤC",
+        "content_raw": "PHỤ LỤC",
+        "type": "title",
+        "number": "",
+        "level": 0,
+        "children": [
+          {
+            "id": "20",
+            "content": "(Kèm theo Nghị định số 41/2022/NĐ-CP ngày 20 tháng 6 năm 2022 của Chính phủ)",
+            "content_raw": "(Kèm theo Nghị định số 41/2022/NĐ-CP ngày 20 tháng 6 năm 2022 của Chính phủ)",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 42
+          },
+          {
+            "id": "21",
+            "content": "Mẫu số: 01/TB-HĐSS",
+            "content_raw": "Mẫu số: 01/TB-HĐSS",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 13
+          },
+          {
+            "id": "22",
+            "content": "| TÊN CƠ QUAN THUẾ CẤP TRÊN   TÊN CƠ QUAN THUẾ   RA THÔNG BÁO   ------- | CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM   Độc lập - Tự do - Hạnh phúc    --------------- |\n| --- | --- |\n| Số: …/TB-… | …, ngày ... tháng … năm …. |",
+            "content_raw": "| TÊN CƠ QUAN THUẾ CẤP TRÊN   TÊN CƠ QUAN THUẾ   RA THÔNG BÁO   ------- | CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM   Độc lập - Tự do - Hạnh phúc    --------------- |\n| --- | --- |\n| Số: …/TB-… | …, ngày ... tháng … năm …. |",
+            "type": "table",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 125
+          }
+        ],
+        "is_edit": false,
+        "document_code": "41/2022/NĐ-CP",
+        "num_tokens": 187
+      },
+      {
+        "id": "23",
+        "content": "THÔNG BÁO",
+        "content_raw": "THÔNG BÁO",
+        "type": "title",
+        "number": "",
+        "level": 0,
+        "children": [
+          {
+            "id": "24",
+            "content": "Về việc tiếp nhận và kết quả xử lý về việc hóa đơn điện tử đã lập có sai sót",
+            "content_raw": "Về việc tiếp nhận và kết quả xử lý về việc hóa đơn điện tử đã lập có sai sót",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 39
+          },
+          {
+            "id": "25",
+            "content": "| Kính gửi: | (Họ tên người nộp thuế:....)   (Mã số thuế của NNT:....) |\n| --- | --- |",
+            "content_raw": "| Kính gửi: | (Họ tên người nộp thuế:....)   (Mã số thuế của NNT:....) |\n| --- | --- |",
+            "type": "table",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 43
+          },
+          {
+            "id": "26",
+            "content": "Sau khi xem xét Thông báo hóa đơn điện tử có sai sót ngày .../..../... của:",
+            "content_raw": "Sau khi xem xét Thông báo hóa đơn điện tử có sai sót ngày .../..../... của:",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 32
+          },
+          {
+            "id": "27",
+            "content": "Người nộp thuế ……………………………………………………………………………..",
+            "content_raw": "Người nộp thuế ……………………………………………………………………………..",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 13
+          },
+          {
+            "id": "28",
+            "content": "Mã số thuế: ……………………………………………………………………………………",
+            "content_raw": "Mã số thuế: ……………………………………………………………………………………",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 13
+          },
+          {
+            "id": "29",
+            "content": "Cơ quan thuế thông báo (tiếp nhận/không tiếp nhận) hóa đơn điện tử đã lập có sai sót.",
+            "content_raw": "Cơ quan thuế thông báo (tiếp nhận/không tiếp nhận) hóa đơn điện tử đã lập có sai sót.",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 40
+          },
+          {
+            "id": "30",
+            "content": "(Trong trường hợp tiếp nhận việc hủy/điều chỉnh/thay thế giải trình hóa đơn điện tử đã lập có sai sót thì ghi: Cơ quan Thuế đã tiếp nhận Thông báo hóa đơn điện tử có sai sót ngày ..../..../..... của quý công ty).",
+            "content_raw": "(Trong trường hợp tiếp nhận việc hủy/điều chỉnh/thay thế giải trình hóa đơn điện tử đã lập có sai sót thì ghi: Cơ quan Thuế đã tiếp nhận Thông báo hóa đơn điện tử có sai sót ngày ..../..../..... của quý công ty).",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 95
+          },
+          {
+            "id": "31",
+            "content": "(Trong trường hợp không tiếp nhận việc hủy/điều chỉnh/thay thế giải trình hóa đơn điện tử đã lập có sai sót thì ghi: Đề nghị quý công ty kiểm tra, đối chiếu hóa đơn điện tử đã lập có sai sót do thông tin chưa chính xác).",
+            "content_raw": "(Trong trường hợp không tiếp nhận việc hủy/điều chỉnh/thay thế giải trình hóa đơn điện tử đã lập có sai sót thì ghi: Đề nghị quý công ty kiểm tra, đối chiếu hóa đơn điện tử đã lập có sai sót do thông tin chưa chính xác).",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 98
+          },
+          {
+            "id": "32",
+            "content": "Cơ quan thuế thông báo để người nộp thuế biết, thực hiện./.",
+            "content_raw": "Cơ quan thuế thông báo để người nộp thuế biết, thực hiện./.",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 26
+          },
+          {
+            "id": "33",
+            "content": "|  | CƠ QUAN THUẾ hoặc THỦ TRƯỞNG CƠ QUAN THUẾ   (Chữ ký số) |\n| --- | --- |",
+            "content_raw": "|  | CƠ QUAN THUẾ hoặc THỦ TRƯỞNG CƠ QUAN THUẾ   (Chữ ký số) |\n| --- | --- |",
+            "type": "table",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 47
+          },
+          {
+            "id": "34",
+            "content": "Ghi chú:",
+            "content_raw": "Ghi chú:",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 5
+          },
+          {
+            "id": "35",
+            "content": "- Trường hợp CQT tiếp nhận Mẫu số 04/SS-HĐĐT Phụ lục IA ban hành kèm theo Nghị định số 123/2020/NĐ-CP do NNT gửi đến theo quy định tại khoản 1 và điểm a khoản 2 Điều 19 Nghị định số 123/2020/NĐ-CP thì “Chữ ký số” là chữ ký số của cơ quan thuế.",
+            "content_raw": "- Trường hợp CQT tiếp nhận Mẫu số 04/SS-HĐĐT Phụ lục IA ban hành kèm theo Nghị định số 123/2020/NĐ-CP do NNT gửi đến theo quy định tại khoản 1 và điểm a khoản 2 Điều 19 Nghị định số 123/2020/NĐ-CP thì “Chữ ký số” là chữ ký số của cơ quan thuế.",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 129
+          },
+          {
+            "id": "36",
+            "content": "- Trường hợp CQT tiếp nhận Mẫu số 04/SS-HĐĐT Phụ lục IA ban hành kèm theo Nghị định số 123/2020/NĐ-CP do NNT gửi đến theo quy định tại khoản 3 Điều 19 Nghị định số 123/2020/NĐ-CP thì “Chữ ký số” là chữ ký số của Thủ trưởng cơ quan thuế.",
+            "content_raw": "- Trường hợp CQT tiếp nhận Mẫu số 04/SS-HĐĐT Phụ lục IA ban hành kèm theo Nghị định số 123/2020/NĐ-CP do NNT gửi đến theo quy định tại khoản 3 Điều 19 Nghị định số 123/2020/NĐ-CP thì “Chữ ký số” là chữ ký số của Thủ trưởng cơ quan thuế.",
+            "type": "nội dung",
+            "number": "",
+            "level": 7,
+            "children": [],
+            "is_edit": false,
+            "document_code": "41/2022/NĐ-CP",
+            "num_tokens": 127
+          }
+        ],
+        "is_edit": false,
+        "document_code": "41/2022/NĐ-CP",
+        "num_tokens": 714
+      }
+    ],
+    "is_edit": false,
+    "document_code": "41/2022/NĐ-CP",
+    "num_tokens": 3021
+  }
+]

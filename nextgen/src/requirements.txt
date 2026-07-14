@@ -1,0 +1,30 @@
+# Core RAG
+qdrant-client>=1.9.0
+rank_bm25>=0.2.2
+sentence-transformers>=2.7.0
+
+# NLP tiếng Việt
+underthesea>=6.8.0
+
+# LLM & Quantization (Kaggle GPU)
+transformers>=4.43.0
+accelerate>=0.30.0
+bitsandbytes>=0.43.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+numpy>=1.26.0
+
+# Demo web app (app/) — LLM sinh câu trả lời gọi qua API hosted, không nạp model tại chỗ
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+openai>=1.30.0
+
+# Ingest văn bản mới (tải + parse HTML từ thuvienphapluat / nguồn chính thức)
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# PyTorch (Kaggle đã cài sẵn, dòng này để local)
+# torch>=2.2.0

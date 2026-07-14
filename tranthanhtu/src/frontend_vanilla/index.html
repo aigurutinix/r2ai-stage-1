@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legal Assistant - Trợ lý Pháp lý SME Việt Nam</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Chat Area (Left Panel) -->
+        <main class="chat-panel">
+            <header class="app-header">
+                <div class="logo-area">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>AI Legal Assistant</h1>
+                        <span class="sub-logo">Trợ lý Pháp lý Doanh nghiệp SME</span>
+                    </div>
+                </div>
+                
+                <!-- Role Selector Toggle -->
+                <div class="role-selector">
+                    <button class="role-btn active" id="role-client-btn">
+                        <i class="fa-solid fa-user-tie"></i> SME Client
+                    </button>
+                    <button class="role-btn" id="role-admin-btn">
+                        <i class="fa-solid fa-user-shield"></i> Admin
+                    </button>
+                </div>
+
+                <div class="session-badge">
+                    <span class="status-dot pulsing"></span>
+                    <span id="session-status">Agent Sẵn sàng</span>
+                </div>
+            </header>
+
+            <!-- Chat Message Thread -->
+            <section class="chat-thread" id="chat-thread">
+                <!-- Welcome Message -->
+                <div class="message system-msg">
+                    <div class="message-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <h2>Xin kính chào Quý Doanh nghiệp! 👋</h2>
+                        <p>Tôi là <strong>Trợ lý Pháp lý AI</strong>, được tối ưu hóa đặc biệt bằng <strong>Google Antigravity SDK</strong> để hỗ trợ các doanh nghiệp SME tại Việt Nam tra cứu điều luật, phân tích tình huống thực tế và soạn thảo biểu mẫu hành chính nhanh chóng.</p>
+                        <p class="suggest-title">Bạn có thể hỏi tôi các câu hỏi như:</p>
+                        <div class="suggestion-chips">
+                            <button class="chip-btn" onclick="sendSuggestion('Nhân viên tự ý nghỉ việc 5 ngày liên tục không phép có bị sa thải không?')">
+                                <i class="fa-solid fa-user-minus"></i> Sa thải tự ý nghỉ việc 5 ngày?
+                            </button>
+                            <button class="chip-btn" onclick="sendSuggestion('Tôi muốn sa thải nhân viên thử việc thì có phải đền bù không?')">
+                                <i class="fa-solid fa-user-clock"></i> Sa thải nhân viên thử việc?
+                            </button>
+                            <button class="chip-btn" onclick="sendSuggestion('Hồ sơ và thủ tục thành lập chi nhánh mới cho công ty TNHH gồm những gì?')">
+                                <i class="fa-solid fa-building-circle-check"></i> Thủ tục mở chi nhánh?
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agent Thinking / Loading Animation -->
+            <div class="agent-loader" id="agent-loader" style="display: none;">
+                <div class="loader-icon">
+                    <i class="fa-solid fa-cog fa-spin"></i>
+                </div>
+                <div class="loader-text">Agent đang phân tích lập luận & tra cứu điều luật...</div>
+            </div>
+
+            <!-- Clarification Options Modal / Overlay (Clarification Loop UI) -->
+            <div class="clarification-panel" id="clarification-panel" style="display: none;">
+                <div class="clarification-header">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span id="clarify-question-text">Câu hỏi làm rõ từ Agent:</span>
+                </div>
+                <div class="clarification-options" id="clarify-options-container">
+                    <!-- Dynamic buttons will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <footer class="input-area">
+                <form id="chat-form" class="chat-form">
+                    <input type="text" id="user-input" placeholder="Nhập tình huống hoặc câu hỏi pháp lý của doanh nghiệp tại đây..." autocomplete="off" required>
+                    <button type="submit" class="send-btn" id="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div class="privacy-note">
+                    <i class="fa-solid fa-shield-halved"></i> Bảo mật tối đa: Hệ thống tự động khử định danh (PII Redaction) để bảo vệ bí mật kinh doanh của bạn.
+                </div>
+            </footer>
+        </main>
+
+        <!-- Legal Verification Panel (Right Panel) -->
+        <aside class="verification-panel" id="verification-panel">
+            <header class="verification-header">
+                <div class="panel-title">
+                    <i class="fa-solid fa-gavel"></i>
+                    <h2>Cơ sở Pháp lý Đối chiếu</h2>
+                </div>
+                <button class="close-panel-btn" id="close-panel-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+
+            <div class="panel-tabs">
+                <button class="tab-btn active" id="tab-laws-btn">
+                    <i class="fa-solid fa-book-scale"></i> Đối chiếu Luật
+                </button>
+                <button class="tab-btn" id="tab-admin-btn">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> Học Luật Thô
+                </button>
+            </div>
+
+            <div class="verification-body" id="verification-body">
+                <!-- Laws Tab Content -->
+                <div id="laws-tab-content">
+                    <!-- Welcome Side View -->
+                    <div class="side-panel-placeholder" id="side-placeholder">
+                        <div class="placeholder-icon">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <h3>Bảng Tra Cứu Nguyên Văn</h3>
+                        <p>Nhấp vào bất kỳ <strong>Thẻ Trích Dẫn</strong> nào trong bong bóng chat để hiển thị nguyên văn văn bản pháp luật gốc từ Cơ quan Nhà nước tại đây nhằm tự đối chiếu chéo.</p>
+                    </div>
+
+                    <!-- Active Verified Law View -->
+                    <div class="verified-law-card" id="law-card" style="display: none;">
+                        <button class="back-to-library-btn" id="back-to-library-btn">
+                            <i class="fa-solid fa-arrow-left"></i> Quay lại Thư viện
+                        </button>
+                        <div class="law-tag" id="law-status-badge">Còn hiệu lực</div>
+                        <h3 class="law-title" id="law-title-text">Điều 125. Áp dụng hình thức xử lý kỷ luật sa thải</h3>
+                        <div class="law-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Văn bản:</span>
+                                <span class="meta-value" id="law-name-text">Bộ luật Lao động 2019</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Hiệu lực:</span>
+                                <span class="meta-value" id="law-date-text">2021-01-01</span>
+                            </div>
+                        </div>
+                        
+                        <div class="law-section-divider">Nguyên văn Điều Luật:</div>
+                        <div class="law-text-content" id="law-text-content">
+                            <!-- Law text here -->
+                        </div>
+
+                        <!-- Matched Clause Highlight -->
+                        <div id="clause-highlight-container" style="display: none;">
+                            <div class="law-section-divider text-accent">Khoản/Điểm đối chiếu khớp:</div>
+                            <div class="law-highlight-box" id="law-highlight-text">
+                                <!-- Clause highlighted text -->
+                            </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="verify-external-btn" id="law-external-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Kiểm tra tại vbpl.vn (Cổng Chính Phủ)
+                        </a>
+                    </div>
+
+                    <!-- Read-Only Legal Document Library for Clients -->
+                    <div class="legal-library-section" id="legal-library-section">
+                        <div class="section-title-box">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span>Thư viện Văn bản Trợ lý sở hữu</span>
+                        </div>
+                        <div class="doc-list" id="client-doc-list">
+                            <!-- Dynamic list populate -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Tab Content (Dynamic Ingestion) -->
+                <div id="admin-tab-content" style="display: none;">
+                    <div class="admin-dashboard-card">
+                        <h3>Nạp Tài liệu Pháp lý Thô (.docx)</h3>
+                        <p class="admin-desc">Hệ thống RAG Động cho phép tải lên trực tiếp văn bản luật thô (.docx) tải từ cổng chính phủ để AI tự động bóc tách cấu trúc và học ngay lập tức.</p>
+                        
+                        <div class="upload-dropzone" id="upload-dropzone">
+                            <i class="fa-solid fa-file-word dropzone-icon"></i>
+                            <p class="dropzone-text" id="dropzone-text">Kéo thả file .docx tại đây hoặc nhấp chuột để chọn file</p>
+                            <input type="file" id="file-file-input" accept=".docx" style="display: none;">
+                            <span class="file-name-indicator" id="file-name-indicator"></span>
+                        </div>
+
+                        <div class="admin-inputs-group">
+                            <input type="text" id="admin-law-name" placeholder="Tên văn bản luật (Tùy chọn ghi đè)...">
+                            <input type="text" id="admin-source-url" placeholder="URL nguồn kiểm chứng thực tế (Tùy chọn)...">
+                        </div>
+
+                        <button class="upload-submit-btn" id="upload-submit-btn">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> Bắt đầu Nạp & Trích lọc
+                        </button>
+
+                        <div class="or-divider">
+                            <span>HOẶC</span>
+                        </div>
+
+                        <h3>Tải & Học từ Cổng chính phủ VBPL.vn</h3>
+                        <p class="admin-desc">Nhập mã ID (dạng số hoặc dạng chuỗi chữ UUID) của văn bản pháp lý từ trang <strong>vbpl.vn</strong> chính thức (ví dụ: 139877) để AI tự động kết nối API cổng, tải bản toàn văn, bóc tách và nạp vào cơ sở dữ liệu RAG.</p>
+                        
+                        <div class="admin-inputs-group" style="margin-top: 4px;">
+                            <input type="text" id="admin-vbpl-id" placeholder="Nhập ID văn bản VBPL (số hoặc chuỗi UUID)...">
+                        </div>
+
+                        <button class="upload-submit-btn" id="admin-vbpl-submit-btn" style="background: linear-gradient(135deg, var(--accent-gold-dark), var(--accent-gold)); color: #ffffff;">
+                            <i class="fa-solid fa-cloud-arrow-down"></i> Kết nối & Đồng bộ VBPL
+                        </button>
+
+                        <div class="upload-progress-container" id="upload-progress-container" style="display: none;">
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                            </div>
+                            <span class="progress-status-text" id="progress-status-text">Đang phân tích cấu trúc...</span>
+                        </div>
+
+                        <div class="ingest-status-alert" id="ingest-status-alert" style="display: none;">
+                            <!-- Dynamic success/error alerts will go here -->
+                        </div>
+                    </div>
+
+                    <!-- File Manager Dashboard for Admins -->
+                    <div class="legal-library-section">
+                        <div class="section-title-box text-accent-red">
+                            <i class="fa-solid fa-folder-tree"></i>
+                            <span>Quản lý Kho Dữ liệu thô</span>
+                        </div>
+                        <div class="doc-list" id="admin-doc-list">
+                            <!-- Dynamic file list with delete triggers -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>

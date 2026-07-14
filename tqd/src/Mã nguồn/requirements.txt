@@ -1,0 +1,29 @@
+# ============================================================
+# R2AI Legal QA System — Python Dependencies
+# Python >= 3.10  |  CUDA >= 11.8
+#
+# Kaggle tự cài torch. Chỉ cần chạy:
+#   pip install -q sentence-transformers rank_bm25 underthesea
+# trong Cell 1 của pipeline-corpus.ipynb
+#
+# Với llm-gen.ipynb, đặt INSTALL_PACKAGES = True trong cell đầu
+# để tự động cài transformers, accelerate, bitsandbytes.
+# ============================================================
+
+# --- Bước 1: Retrieval pipeline (pipeline-corpus.ipynb) ---
+sentence-transformers>=2.7.0    # BGE-M3 embedder + BGE-reranker-v2-m3
+rank-bm25>=0.2.2                # BM25Okapi sparse retrieval
+underthesea>=6.8.0              # Vietnamese word tokenizer
+
+# --- Bước 2: LLM generation (llm-gen.ipynb) ---
+transformers>=4.51.0            # Qwen3-14B inference
+accelerate>=0.33.0              # multi-GPU / device_map="auto"
+bitsandbytes>=0.43.0            # 4-bit NF4 quantization
+
+# --- Shared ---
+numpy>=1.24.0
+tqdm>=4.66.0
+
+# --- PyTorch (Kaggle có sẵn, không cần cài) ---
+# Nếu cài local, chọn đúng CUDA version:
+# pip install torch --index-url https://download.pytorch.org/whl/cu121

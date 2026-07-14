@@ -1,0 +1,24 @@
+# Offline competition pipeline deps (open-source models, <14B, pre-2026-03-01).
+# Install: pip install -r backend/requirements-local.txt
+
+# Embedding + reranker (BGE-M3 based, Vietnamese fine-tunes by AITeamVN, MIT)
+sentence-transformers>=3.0.0
+torch>=2.2.0
+
+# Vector store: numpy brute-force cosine (corpus_emb.npy) — corpus nhỏ (~15MB float32),
+# không cần ChromaDB/FAISS. numpy đi kèm sentence-transformers, ghi rõ để chắc chắn.
+numpy>=1.24
+rank-bm25>=0.2.2
+
+# HuggingFace corpus datasets (tmquan/vbpl-vn, phapdien, anle)
+datasets>=2.18.0
+
+# Optional Vietnamese word segmentation (improves BM25; pipeline works without it)
+pyvi>=0.1.1
+
+# Note: LLM (Qwen2.5-7B-Instruct) runs via Ollama, not pip.
+#   ollama pull qwen2.5:7b-instruct-q4_K_M
+#
+# Reproducibility (working-notes paper): pin HF revisions when finalizing, e.g.
+#   AITeamVN/Vietnamese_Embedding @ <commit>
+#   AITeamVN/Vietnamese_Reranker  @ <commit>

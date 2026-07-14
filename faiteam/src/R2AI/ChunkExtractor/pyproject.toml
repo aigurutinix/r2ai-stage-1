@@ -1,0 +1,18 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ChunkExtractor"
+version = "0.0.1"
+description = "version 0.0.1 of ChunkExtractor"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "tiktoken",
+    "semantic-text-splitter"
+]
+requires-python = ">=3.9"

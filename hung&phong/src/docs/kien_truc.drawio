@@ -1,0 +1,122 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="vbpl-arch" name="Kien truc Chatbot VBPL">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="title" value="KIẾN TRÚC HỆ THỐNG CHATBOT VĂN BẢN PHÁP LUẬT — RAG truy hồi ĐIỀU LUẬT (Stage 1: chấm relevant_articles + relevant_docs)" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="1400" height="30" as="geometry"/></mxCell>
+
+        <!-- ===== PHASE 1: INGEST ===== -->
+        <mxCell id="G1" value="1 · INGEST DỮ LIỆU (offline, chạy 1 lần)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="70" width="1080" height="130" as="geometry"/></mxCell>
+        <mxCell id="A1" value="HF dataset&#10;tmquan/vbpl-vn&#10;(scrape vbpl.vn)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="115" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="A2" value="ingest/parse_vbpl.py&#10;Tách Điều → Khoản → Điểm&#10;(rà soát lỗi 'nuốt điều')" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="250" y="115" width="190" height="60" as="geometry"/></mxCell>
+        <mxCell id="A3" value="ingest/chunk.py&#10;Chunk theo CẤU TRÚC (Điều/Khoản)&#10;KEEP_WHOLE=2500, KHÔNG overlap&#10;header lấy từ text, chunk_id = md5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="475" y="110" width="250" height="70" as="geometry"/></mxCell>
+        <mxCell id="A4" value="backend/textnorm.py&#10;normalize_vn — chuẩn dấu thanh&#10;khỏan→khoản (NFC), áp ĐỐI XỨNG&#10;corpus + query" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="760" y="112" width="230" height="66" as="geometry"/></mxCell>
+        <mxCell id="e_A1A2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="A1" target="A2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_A2A3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="A2" target="A3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_A3A4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="A3" target="A4"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ===== PHASE 2: EMBED + INDEX ===== -->
+        <mxCell id="G2" value="2 · EMBED &amp; BUILD INDEX (offline)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="220" width="1080" height="120" as="geometry"/></mxCell>
+        <mxCell id="B1" value="scripts/embed_from_parquet.py&#10;+ embed_tail.py (batch 8 chống OOM)&#10;sort theo độ dài (tăng tốc ~7x)&#10;PYTORCH_CUDA_ALLOC_CONF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="262" width="260" height="68" as="geometry"/></mxCell>
+        <mxCell id="B2" value="AITeamVN/Vietnamese_Embedding_v2&#10;1024-dim · fp16 · GPU&#10;(embed 285k chunk)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="370" y="265" width="270" height="62" as="geometry"/></mxCell>
+        <mxCell id="B3" value="Build BM25 (rank_bm25)&#10;trên text đã normalize" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="700" y="268" width="240" height="55" as="geometry"/></mxCell>
+        <mxCell id="e_A4B1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="A4" target="B1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_B1B2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="B1" target="B2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_B1B3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;dashed=1;" edge="1" parent="1" source="B1" target="B3"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ===== PHASE 3: STORAGE ===== -->
+        <mxCell id="G3" value="3 · STORAGE (lưu trữ vector + lexical)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="360" width="1080" height="130" as="geometry"/></mxCell>
+        <mxCell id="S1" value="Qdrant SERVER (Docker :6333)&#10;collection vbpl_aiteam — 285,020 chunk&#10;payload: so_ky_hieu, dieu_so, loai_van_ban,&#10;tinh_trang_hieu_luc, ngay_ban_hanh, text&#10;HNSW native (USE_HNSW=false)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;boundedLbl=1;" vertex="1" parent="1"><mxGeometry x="80" y="395" width="420" height="90" as="geometry"/></mxCell>
+        <mxCell id="S2" value="BM25 index&#10;data/bm25_vbpl_aiteam.pkl&#10;(285k doc · lexical)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;boundedLbl=1;" vertex="1" parent="1"><mxGeometry x="620" y="400" width="280" height="80" as="geometry"/></mxCell>
+        <mxCell id="e_B2S1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="B2" target="S1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_B3S2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="B3" target="S2"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ===== PHASE 4: RETRIEVAL ===== -->
+        <mxCell id="G4" value="4 · RETRIEVAL — backend/rag.py :: retrieve()  (chạy MỖI truy vấn)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="510" width="1080" height="360" as="geometry"/></mxCell>
+        <mxCell id="R0" value="Query (câu hỏi tình huống)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="60" y="555" width="180" height="40" as="geometry"/></mxCell>
+        <mxCell id="R1" value="normalize_vn(query)&#10;(đối xứng corpus)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="620" width="180" height="45" as="geometry"/></mxCell>
+        <mxCell id="R2" value="embed query&#10;(AITeamVN-v2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="690" width="180" height="45" as="geometry"/></mxCell>
+        <mxCell id="R3" value="backend/query_analyzer.py&#10;analyze() → filter-first&#10;(số ký hiệu / Điều / loại VB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="290" y="555" width="210" height="60" as="geometry"/></mxCell>
+        <mxCell id="R4" value="Dense search (Qdrant)&#10;fetch_k=40&#10;filter-first → fallback vector-only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="290" y="635" width="210" height="55" as="geometry"/></mxCell>
+        <mxCell id="R5" value="BM25 search&#10;fetch_k=40 (lexical)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="290" y="710" width="210" height="45" as="geometry"/></mxCell>
+        <mxCell id="R6" value="merge dense ∪ BM25&#10;(_hid dedup ứng viên)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="540" y="640" width="170" height="50" as="geometry"/></mxCell>
+        <mxCell id="R7" value="RERANKER (cross-encoder)&#10;env RERANKER_MODEL:&#10;• bge-reranker-v2-m3 (đang dùng)&#10;• AITeamVN/Vietnamese_Reranker (thử)&#10;→ rerank_score" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="750" y="615" width="250" height="95" as="geometry"/></mxCell>
+        <mxCell id="R8" value="adj_score = rerank_score + _rerank_adjust&#10;phạt 'HẾT HIỆU LỰC TOÀN BỘ', ưu tiên&#10;Luật/Bộ luật, boost năm mới" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="750" y="735" width="250" height="65" as="geometry"/></mxCell>
+        <mxCell id="R9" value="dedup theo (so_ky_hieu, dieu_so)&#10;→ trả về top_k hits" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="540" y="730" width="180" height="55" as="geometry"/></mxCell>
+        <mxCell id="e_R0R1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R0" target="R1"/>
+        <mxCell id="e_R1R2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R1" target="R2"/>
+        <mxCell id="e_R1R3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R1" target="R3"/>
+        <mxCell id="e_R2R4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R2" target="R4"/>
+        <mxCell id="e_R3R4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R3" target="R4"/>
+        <mxCell id="e_R1R5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R1" target="R5"/>
+        <mxCell id="e_R4R6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R4" target="R6"/>
+        <mxCell id="e_R5R6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R5" target="R6"/>
+        <mxCell id="e_R6R7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R6" target="R7"/>
+        <mxCell id="e_R7R8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R7" target="R8"/>
+        <mxCell id="e_R8R9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="R8" target="R9"/>
+        <mxCell id="e_R4S1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;startArrow=none;" edge="1" parent="1" source="S1" target="R4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_R5S2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;startArrow=none;" edge="1" parent="1" source="S2" target="R5"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ===== PHASE 5: BUILD / SELECTION ===== -->
+        <mxCell id="G5" value="5 · BUILD SUBMISSION &amp; SELECTION — tests/build_submission_v12.py · scripts/build_full_v25.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="890" width="1080" height="330" as="geometry"/></mxCell>
+        <mxCell id="DEC" value="backend/decompose.py + scripts/decompose_*&#10;Qwen tách subqueries NÔNG (≤4 vế)&#10;→ data/subqueries.json&#10;(SÂU = thất bại, đã loại)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="930" width="270" height="78" as="geometry"/></mxCell>
+        <mxCell id="P1" value="retrieve(câu gốc, orig_topk=8)&#10;+ retrieve(mỗi subquery, sub_topk=8)&#10;[GỌI khối RETRIEVAL phía trên]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="1035" width="270" height="70" as="geometry"/></mxCell>
+        <mxCell id="P2" value="merge_cands&#10;(giữ rerank-score cao nhất)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="370" y="935" width="220" height="50" as="geometry"/></mxCell>
+        <mxCell id="P3" value="collapse / collapse_versions&#10;Gộp bản CŨ cùng họ → giữ năm mới nhất&#10;(recall-safe)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="370" y="1005" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="P4" value="adaptive select&#10;cut = max(t_abs=0.40, ratio0.80·top)&#10;min_k=1, max_k=4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="370" y="1085" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="P5" value="JUDGE keep-top-2&#10;(Qwen CoT, think=True)&#10;giữ nếu rank≤2 ∪ CÓ" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="630" y="985" width="220" height="100" as="geometry"/></mxCell>
+        <mxCell id="P6" value="penalty augment (scripts/exp_v24.py)&#10;bơm NĐ XỬ PHẠT (whitelist lĩnh vực)&#10;+ collapse phiên bản" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="620" y="1115" width="240" height="62" as="geometry"/></mxCell>
+        <mxCell id="OUT0" value="relevant_articles&#10;relevant_docs&#10;(answer — KHÔNG được chấm)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="900" y="1030" width="190" height="70" as="geometry"/></mxCell>
+        <mxCell id="e_DECP1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="DEC" target="P1"/>
+        <mxCell id="e_P1P2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="P1" target="P2"/>
+        <mxCell id="e_P2P3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="P2" target="P3"/>
+        <mxCell id="e_P3P4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="P3" target="P4"/>
+        <mxCell id="e_P4P5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="P4" target="P5"/>
+        <mxCell id="e_P5P6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;value=giữ" edge="1" parent="1" source="P5" target="P6"/>
+        <mxCell id="e_P6OUT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="P6" target="OUT0"/>
+        <mxCell id="e_R9P1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="R9" target="P1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ===== PHASE 6: OUTPUT / SCORE ===== -->
+        <mxCell id="G6" value="6 · OUTPUT &amp; CHẤM ĐIỂM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="1240" width="1080" height="110" as="geometry"/></mxCell>
+        <mxCell id="O1" value="scripts/pack.py&#10;→ results.json (ZIP phẳng)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="1280" width="240" height="50" as="geometry"/></mxCell>
+        <mxCell id="O2" value="Nộp BTC → scorer tự động" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="370" y="1280" width="240" height="50" as="geometry"/></mxCell>
+        <mxCell id="O3" value="ARTICLES_F2 / P / R · DOCS_F2 / P / R&#10;F2 = 5PR/(4P+R) — ưu tiên recall ×4&#10;(QA=0 — Stage 1 chỉ chấm retrieval)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=11;" vertex="1" parent="1"><mxGeometry x="680" y="1272" width="320" height="66" as="geometry"/></mxCell>
+        <mxCell id="e_OUTO1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="OUT0" target="O1"/>
+        <mxCell id="e_O1O2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="O1" target="O2"/>
+        <mxCell id="e_O2O3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="O2" target="O3"/>
+
+        <!-- ===== SIDE: MODELS ===== -->
+        <mxCell id="G7" value="MODELS (GPU RTX 3060 12GB)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1150" y="70" width="320" height="430" as="geometry"/></mxCell>
+        <mxCell id="M1" value="AITeamVN/Vietnamese_Embedding_v2&#10;bi-encoder · embed query + corpus&#10;Zalo acc@1 ~0.726 (mạnh nhất VN-legal)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="110" width="290" height="64" as="geometry"/></mxCell>
+        <mxCell id="M2" value="RERANKER (cross-encoder)&#10;bge-reranker-v2-m3 (generic, đang dùng)&#10;→ AITeamVN/Vietnamese_Reranker&#10;(VN-legal, Zalo ~0.794 — đang thử)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="190" width="290" height="76" as="geometry"/></mxCell>
+        <mxCell id="M3" value="Qwen3.5:9b — 'qwen-vbpl' qua Ollama&#10;• JUDGE keep-top-2 (CoT, think=True)&#10;• DECOMPOSE subqueries&#10;• (answer-gen — không dùng cho điểm)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="282" width="290" height="80" as="geometry"/></mxCell>
+        <mxCell id="M4" value="(NGHIÊN CỨU — chưa làm)&#10;Qwen LISTWISE rerank (thay judge CÓ/KHÔNG),&#10;BGE-M3 sparse+ColBERT, jina-colbert-v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;dashed=1;" vertex="1" parent="1"><mxGeometry x="1165" y="378" width="290" height="72" as="geometry"/></mxCell>
+        <mxCell id="e_M1B2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="M1" target="B2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_M1R2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="M1" target="R2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_M2R7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="M2" target="R7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_M3P5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="M3" target="P5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_M3DEC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;" edge="1" parent="1" source="M3" target="DEC"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ===== SIDE: INFRA ===== -->
+        <mxCell id="G8" value="INFRA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1150" y="520" width="320" height="170" as="geometry"/></mxCell>
+        <mxCell id="I1" value="Docker Desktop → container 'qdrant' (:6333-6334)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="555" width="290" height="40" as="geometry"/></mxCell>
+        <mxCell id="I2" value="Ollama server (:11434) — qwen-vbpl, bge-m3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="605" width="290" height="35" as="geometry"/></mxCell>
+        <mxCell id="I3" value="GPU NVIDIA RTX 3060 12GB · Python PYTHONUTF8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="650" width="290" height="35" as="geometry"/></mxCell>
+
+        <!-- ===== SIDE: EXPERIMENTS / POST-PROCESS ===== -->
+        <mxCell id="G9" value="POST-PROCESS &amp; THÍ NGHIỆM (augment trên submission)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1150" y="710" width="320" height="290" as="geometry"/></mxCell>
+        <mxCell id="E1" value="exp_v24.py — penalty (NĐ xử phạt) + collapse phiên bản" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="745" width="290" height="44" as="geometry"/></mxCell>
+        <mxCell id="E2" value="exp_recover2.py — khôi phục LUẬT GỐC judge cắt (co-citation cha-con)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="799" width="290" height="50" as="geometry"/></mxCell>
+        <mxCell id="E3" value="build_full_v25.py — full pipeline dựng lại (retrieve+decomp+penalty+collapse+judge)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1165" y="859" width="290" height="56" as="geometry"/></mxCell>
+        <mxCell id="E4" value="LỊCH SỬ NỘP: v14→v24 (BEST 0.603)&#10;docs/SUBMISSIONS.md · POST_SUBMISSION_REVIEW.md" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1165" y="925" width="290" height="60" as="geometry"/></mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="LG" value="GHI CHÚ: nét liền = luồng dữ liệu chính · nét đứt = model/storage được GỌI · hình trụ = kho lưu trữ · hình thoi = bước LỌC (judge)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="40" y="1360" width="1080" height="20" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

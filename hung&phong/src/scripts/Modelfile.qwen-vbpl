@@ -1,0 +1,11 @@
+# Model dan xuat cho Chatbot VBPL: tang context window de chua prompt RAG (10 chunks)
+# + reasoning + cau tra loi. Mac dinh Ollama chi 4096 -> qua nho cho RAG phap luat.
+FROM qwen3.5:9b
+
+# Context window: prompt RAG ~3.7k token + thinking + answer. 16k du rong.
+PARAMETER num_ctx 16384
+
+# Gioi han do dai cau tra loi (khop LLM_MAX_TOKENS).
+PARAMETER num_predict 2048
+
+PARAMETER temperature 0.2

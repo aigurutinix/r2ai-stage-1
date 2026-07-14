@@ -1,0 +1,5 @@
+openai
+requests
+tiktoken
+dotenv
+html-to-markdown[lxml]

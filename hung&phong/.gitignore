@@ -1,0 +1,81 @@
+# Env
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+
+# Data + storage
+data/hf_cache/
+data/qdrant_local/
+qdrant_storage/
+*.parquet
+*.arrow
+*.h5
+*.db
+
+# Generated eval artifacts (tái tạo được từ code trong tests/)
+data/competition_answers*.json
+data/eval_set.json
+data/f2_eval_*
+data/batch_eval_*
+data/_*.json
+data/vbpl_v2_manifest.json
+data/submission*.json
+data/submission*.zip
+data/v*_sidecar.json
+data/*sidecar*.json
+data/judge_cache*.json
+data/query_cache*.json
+data/answer_cache*.json
+data/*_train.jsonl
+data/*_cands.json
+data/pseudo_gold.json
+data/_diff*/
+data/corpus_vbpl_v2/manifest.json
+data/subqueries_deep.json
+data/subqueries_mid_sample.json
+data/vbpl_v3_added_manifest.json
+data/scoring*/
+data/diag/
+data/inspect/
+data/manual_vbpl/
+data/_corpus*/
+data/corpus_vbpl_v2_parsefix*/
+data/*.pkl
+data/*.zip
+data/*.log
+data/corpus_vbpl_v2/*.parquet
+data/bm25_*.pkl
+data/eval_set*.json
+models/
+leader.txt
+v53.txt
+*.txt
+!README.txt
+submission*.json
+tmp*.py
+
+# Temp diagnostic scripts (underscore prefix)
+scripts/_*.py
+
+# Local harness/IDE state
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/

@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: dark;
+  --bg: #000;
+  --sidebar: #050505;
+  --panel: #242426;
+  --panel-hover: #303033;
+  --line: #2f3033;
+  --text: #f4f4f5;
+  --muted: #a8a8ad;
+}
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); }
+body { font: 16px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button, textarea, input { font: inherit; }
+button { color: inherit; background: none; border: 0; cursor: pointer; }
+.shell { width: 100vw; height: 100vh; overflow: hidden; display: grid; grid-template-columns: 292px 1fr; background: var(--bg); }
+.shell.sidebarClosed { grid-template-columns: 1fr; }
+.sidebar { min-width: 0; height: 100vh; overflow: hidden; background: var(--sidebar); border-right: 1px solid #1c1c1f; padding: 16px 8px; display: flex; flex-direction: column; gap: 18px; }
+.brand { display: flex; align-items: center; justify-content: space-between; padding: 0 14px; font-size: 22px; font-weight: 750; }
+.iconButton { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; color: var(--muted); }
+.iconButton:hover, .navItem:hover, .chatRow:hover, .deleteChat:hover { background: var(--panel-hover); color: #fff; }
+.nav { display: grid; gap: 5px; }
+.navItem { min-height: 42px; display: flex; align-items: center; gap: 12px; padding: 0 12px; border-radius: 9px; text-align: left; }
+.navItem.active { background: var(--panel-hover); }
+.sectionTitle { padding: 0 12px; font-size: 15px; font-weight: 700; }
+.chatList { min-height: 0; display: grid; align-content: start; gap: 3px; overflow-y: auto; padding-right: 2px; }
+.chatRow { min-height: 46px; border-radius: 8px; display: grid; grid-template-columns: 1fr 34px; align-items: center; overflow: hidden; }
+.chatRow.selected { background: #202124; color: #fff; }
+.chatLink { min-width: 0; min-height: 46px; padding: 7px 8px 7px 12px; text-align: left; overflow: hidden; display: grid; gap: 1px; }
+.chatLink span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chatLink small { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.deleteChat { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; color: var(--muted); opacity: 0; }
+.chatRow:hover .deleteChat, .chatRow.selected .deleteChat { opacity: 1; }
+.deleteChat:disabled { opacity: .35; cursor: not-allowed; }
+.muted { padding: 4px 12px; color: var(--muted); font-size: 14px; }
+.chatArea { position: relative; min-width: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+.topbar { height: 56px; flex: 0 0 56px; display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 0 24px; }
+.sidebarClosed .topbar { justify-content: space-between; }
+.loader { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #555; border-top-color: #fff; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.messages { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scroll-behavior: smooth; padding: 34px 24px 210px; display: flex; flex-direction: column; gap: 26px; }
+.empty { margin: auto; transform: translateY(-52px); font-size: clamp(26px, 3vw, 32px); font-weight: 520; text-align: center; }
+.message { width: min(820px, 100%); margin: 0 auto; display: flex; }
+.message.user { justify-content: flex-end; }
+.bubble { max-width: min(720px, 100%); border-radius: 22px; padding: 14px 17px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.message.user .bubble { background: #2f3033; border-bottom-right-radius: 6px; }
+.message.assistant .bubble { padding-left: 0; background: transparent; }
+.streamBox { margin: 0 0 14px; border: 1px solid #303036; border-radius: 12px; background: #111113; overflow: hidden; }
+.streamBox.hidden { display: none; }
+.streamHead { min-height: 38px; padding: 0 12px; display: flex; align-items: center; color: var(--muted); font-size: 14px; border-bottom: 1px solid #28282d; }
+.streamBody { padding: 10px 12px; color: #d8d8dc; font-size: 13px; display: grid; gap: 8px; }
+.traceStep { display: grid; grid-template-columns: 24px 1fr; gap: 9px; align-items: start; }
+.traceStep > span { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: #24252a; color: #d9d9de; font-size: 12px; }
+.traceTitleRow { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.traceTitleRow small { color: #8f9097; font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.traceStep strong { display: block; color: #f2f2f3; font-size: 13px; line-height: 1.25; }
+.traceStep p { margin: 2px 0 0; color: #bfc0c6; line-height: 1.4; overflow-wrap: anywhere; }
+.retrievalTopList { margin-top: 8px; display: grid; gap: 7px; }
+.retrievalTopItem { border: 1px solid #2c2d32; border-radius: 8px; background: #17181b; padding: 8px 9px; display: grid; gap: 4px; }
+.retrievalTopItem strong { color: #eeeeef; font-size: 12px; line-height: 1.35; }
+.retrievalTopItem small { color: #aeb0b8; font-size: 12px; line-height: 1.35; }
+.retrievalTopMeta { display: flex; flex-wrap: wrap; gap: 5px; }
+.retrievalTopMeta span { border: 1px solid #34353b; border-radius: 999px; padding: 1px 7px; color: #c8c9cf; font-size: 11px; font-variant-numeric: tabular-nums; }
+.traceStep.running > span, .traceStep.started > span { animation: tracePulse 1.2s ease-in-out infinite; }
+.traceStep.success > span { background: #15351f; color: #89e39f; }
+.traceStep.warning > span { background: #3a3016; color: #f0cf7b; }
+.traceStep.error > span { background: #401b1b; color: #ff9b9b; }
+.traceLine { color: #d8d8dc; }
+.sources { margin-top: 14px; display: grid; gap: 5px; color: var(--muted); font-size: 13px; }
+.sources strong { color: #e8e8ea; }
+.bottomAnchor { min-height: 4px; }
+.composerWrap { position: fixed; left: 292px; right: 0; bottom: 0; padding: 22px 24px 30px; background: linear-gradient(to top, #000 72%, transparent); }
+.composerWrap.full { left: 0; }
+.composer { width: min(920px, 100%); min-height: 64px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 9px 12px 9px 16px; border: 1px solid #333438; border-radius: 31px; background: var(--panel); box-shadow: 0 12px 28px rgba(0,0,0,.35); }
+.composer textarea { min-height: 26px; max-height: 120px; resize: none; border: 0; outline: 0; background: transparent; color: #fff; }
+.composer textarea::placeholder { color: #b8b8bd; }
+.traceButton { min-height: 36px; border: 1px solid #292a2e; border-radius: 999px; padding: 0 12px; display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+.traceButton:hover, .traceButton[aria-pressed="true"] { color: #fff; background: #161618; }
+.searchInput { width: calc(100% - 24px); margin: -8px 12px 0; min-height: 38px; border: 1px solid #2a2b2f; border-radius: 9px; outline: 0; background: #111113; color: #fff; padding: 0 11px; }
+.searchInput::placeholder { color: var(--muted); }
+.sendButton { width: 44px; height: 44px; border-radius: 50%; background: #fff; color: #000; display: grid; place-items: center; }
+.sendButton:disabled { opacity: .45; cursor: not-allowed; }
+
+.competitionComposer { grid-template-columns: auto 1fr; }
+.fileButton { min-height: 44px; border-radius: 22px; background: #fff; color: #000; display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-weight: 650; padding: 0 18px; }
+.fileButton:disabled { opacity: .45; cursor: not-allowed; }
+.hiddenFile { display: none; }
+@media (max-width: 820px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .composerWrap { left: 0; }
+  .messages { padding-inline: 16px; padding-bottom: 190px; }
+  .composer { grid-template-columns: auto 1fr auto; border-radius: 24px; }
+  .traceButton { display: none; }
+}
+
+@keyframes tracePulse {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; box-shadow: 0 0 0 3px rgba(255,255,255,.06); }
+}

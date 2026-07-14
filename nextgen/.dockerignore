@@ -1,0 +1,17 @@
+# Giảm build context
+venv/
+.venv/
+web/node_modules/
+web/dist/
+app/static/
+.git/
+.github/
+output/
+logs/
+*.pyc
+__pycache__/
+.env
+data/bm25_corpus.pkl
+data/*.bak_*
+notebooks/
+*.ipynb

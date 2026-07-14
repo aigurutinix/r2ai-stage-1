@@ -1,0 +1,41 @@
+# R2AI Task 3.1 — Legal Article Retrieval dependencies
+# Python 3.10+ (dev: 3.13). Pin versions theo môi trường thực tế nếu cần.
+
+# Core numeric / IO
+numpy
+scipy
+requests
+tqdm
+
+# Embedding / reranker (cross-encoder)
+torch
+transformers
+sentence-transformers        # >=5.1.0 (config reranker ghi sentence_transformers 5.1.0)
+
+# Dense retrieval
+faiss-cpu                    # hoặc faiss-gpu nếu build index trên GPU
+
+# Sparse retrieval
+bm25s
+
+# Vietnamese NLP
+underthesea                  # word segmentation (compound words cho BM25S)
+
+# Training data / fine-tune reranker
+datasets
+
+# LLM client (gọi vLLM OpenAI-compatible API)
+openai                       # một số script gọi qua requests, một số qua openai client
+
+# LoRA classifier (Qwen3-1.7B-Base + LoRA, post-processing filter/add)
+unsloth                      # 4-bit QLoRA training + inference
+trl                          # SFTTrainer
+peft                         # LoRA adapter
+scikit-learn                 # F1/accuracy metrics
+
+# LLM + reranker serving (RUNTIME — bắt buộc để serve, không import trực tiếp)
+vllm                         # serve Qwen3-8B-AWQ (port 8011) + reranker pooling (port 8012)
+
+# --- Tùy chọn / chỉ cho nhánh thử nghiệm (KHÔNG bắt buộc cho best pipeline) ---
+# neo4j        # nhánh graph retrieval thử nghiệm (build_graph.py, search_graph.py)
+# baguetter    # nhánh BMX algorithm thử nghiệm (retrieval_bmx.py)

@@ -1,0 +1,25 @@
+debug: false
+environment: development
+log_level: INFO
+
+servers:
+  legal_retrieval:
+    enabled: true
+    host: 0.0.0.0
+    port: 8765
+    log_level: INFO
+    path: /mcp
+    settings:
+      postgres:
+        database_url: postgresql://user:password@localhost:25432/legal_assistant
+        table_name: legal_knowledge_records
+        database_column: database
+      embeddings:
+        api_key: sk-1234
+        base_url: http://localhost:8002/v1
+        model: bge-m3
+      vector_store:
+        provider: chroma
+        persist_directory: ../backend/chroma_db
+        collection_prefix: legal_articles
+        top_k: 8

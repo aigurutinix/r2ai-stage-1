@@ -1,0 +1,20 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FisReader"
+version = "0.0.1"
+description = "A boiler plate to make pip package"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "python-docx",
+    "PyMuPDF",
+    "requests",
+    "docx2python",
+]
+requires-python = ">=3.8"

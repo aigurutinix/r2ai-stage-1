@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/FisReader/__init__.py
+src/FisReader/document.py
+src/FisReader/document_factory.py
+src/FisReader.egg-info/PKG-INFO
+src/FisReader.egg-info/SOURCES.txt
+src/FisReader.egg-info/dependency_links.txt
+src/FisReader.egg-info/requires.txt
+src/FisReader.egg-info/top_level.txt
+src/FisReader/reader/doc2docx.py
+src/FisReader/reader/docx_reader.py
+src/FisReader/reader/markdown_reader.py
+src/FisReader/reader/ocr_reader.py
+src/FisReader/reader/pdf_reader.py
+src/GeneralChunkExtractor/__init__.py
+src/GeneralChunkExtractor/chunk_extract.py

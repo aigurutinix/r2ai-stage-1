@@ -1,0 +1,78 @@
+# ===== Secrets (NEVER commit) =====
+.env
+.env.local
+*.key
+*.pem
+backend/.env
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+
+# ===== Node / Frontend =====
+node_modules/
+dist/
+build/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Vector DB (large, regenerable) =====
+data/chroma_db/
+
+# ===== Generated pipeline artifacts =====
+data/corpus_articles.jsonl
+data/corpus_articles.jsonl.done
+data/corpus_emb.npy
+data/corpus_emb_ids.json
+data/zalo_eval.json
+data/zalo_retrieved.json
+data/sme_doc_ids_existing.json
+data/sme_doc_ids_all.json
+results.json
+submission.zip
+backup/
+sweep/
+backend/static/generated_docs/*
+!backend/static/generated_docs/.gitkeep
+
+# ===== Model / HF caches =====
+.cache/
+*.bin.tmp
+*.safetensors.tmp
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Logs =====
+*.log
+logs/
+/tmp/
+
+# Submission bundle (generated)
+submit/
+submit.zip

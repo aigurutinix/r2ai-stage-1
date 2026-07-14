@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/LegalTreeConstruct/__init__.py
+src/LegalTreeConstruct/document_constructor.py
+src/LegalTreeConstruct/level_detector.py
+src/LegalTreeConstruct/token_counter.py
+src/LegalTreeConstruct/tree_builder.py
+src/LegalTreeConstruct/tree_exporter.py
+src/LegalTreeConstruct.egg-info/PKG-INFO
+src/LegalTreeConstruct.egg-info/SOURCES.txt
+src/LegalTreeConstruct.egg-info/dependency_links.txt
+src/LegalTreeConstruct.egg-info/requires.txt
+src/LegalTreeConstruct.egg-info/top_level.txt
