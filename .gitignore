@@ -19,3 +19,7 @@ venv/
 nguyenvannghiem/data/models/reranker_finetuned_v2_ck8000/model.safetensors
 nguyenvannghiem/data/models/qwen3-1.7b-base/model-00001-of-00002.safetensors
 
+# Large database files (>2GB) - ignored since they are split into .part_* for GitHub
+thanhkhauson/data/raw_law/law_only/others_doc/parsed_others_doc_database.jsonl
+
+

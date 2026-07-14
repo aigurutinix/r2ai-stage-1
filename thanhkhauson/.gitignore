@@ -28,7 +28,7 @@ dbs/*
 !dbs/
 !dbs/start_dbs.sh
 
-data/
+# data/
 
 model_cache/
 *.safetensors
