@@ -1,0 +1,12 @@
+{
+  "reranker_path": "model_cache/ViRanker",
+  "embedding_model_path": "model_cache/vietlegal-harrier-0.6b",
+  "llm_model": "qwen3.5-9b",
+  "llm_base_url": "http://localhost:8000/v1",
+  "llm_api_key": "EMPTY",
+  "es_host": "http://localhost:9201",
+  "qdrant_host": "localhost",
+  "qdrant_port": 6333,
+  "index_name": "legal_chunks",
+  "vncorenlp_dir": "model_cache/vncorenlp"
+}
