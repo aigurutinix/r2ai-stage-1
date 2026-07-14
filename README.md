@@ -15,7 +15,7 @@
 
 ## 1. Giới thiệu cuộc thi
 
-**Road to AI (R2AI)** là cuộc thi và cộng đồng về AI Engineering uy tín tại Việt Nam do công ty **AI Guru** tổ chức. Cuộc thi được xây dựng với mục tiêu thúc đẩy nghiên cứu và phát triển trong lĩnh vực xử lý ngôn ngữ tự nhiên tiếng Việt, đặc biệt tập trung vào các bài toán thực tiễn trong doanh nghiệp. **R2AI – Stage 1** mang đến thử thách xây dựng hệ thống **Legal AI Assistant** hỗ trợ tra cứu và hỏi đáp pháp luật, giúp các kỹ sư AI và nhà phát triển tối ưu hóa quy trình nghiệp vụ pháp lý thông qua công nghệ trí tuệ nhân tạo.
+**Road to AI (R2AI)** là cuộc thi và cộng đồng về AI Engineering uy tín tại Việt Nam do **AI Guru** tổ chức. Cuộc thi được xây dựng với mục tiêu thúc đẩy nghiên cứu và phát triển trong lĩnh vực xử lý ngôn ngữ tự nhiên tiếng Việt, đặc biệt tập trung vào các bài toán thực tiễn trong doanh nghiệp. **R2AI – Stage 1** mang đến thử thách xây dựng hệ thống **Legal AI Assistant** hỗ trợ tra cứu và hỏi đáp pháp luật, giúp các kỹ sư AI và nhà phát triển tối ưu hóa quy trình nghiệp vụ pháp lý thông qua công nghệ trí tuệ nhân tạo.
 
 ### Bối cảnh bài toán
 Doanh nghiệp SME tại Việt Nam thường gặp khó khăn trong việc tra cứu và áp dụng các quy định pháp lý liên quan đến Luật Doanh nghiệp, thuế, lao động, hợp đồng... Trợ lý pháp lý AI cho doanh nghiệp được xây dựng nhằm hỗ trợ chủ doanh nghiệp, kế toán, nhân sự tra cứu nhanh các điều luật, hỏi đáp tình huống pháp lý cụ thể và nhận tư vấn sơ bộ dựa trên hệ thống văn bản pháp luật chính thống.
